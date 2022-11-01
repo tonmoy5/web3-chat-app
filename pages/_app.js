@@ -1,7 +1,14 @@
 import '../styles/globals.css'
+import { ChatAppProvider } from '../Context/ChatAppCountext'
+import { NavBar } from "../Components/index"
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+const MyApp = ({ Component, pageProps }) => {
+  <div>
+    <ChatAppProvider>
+      <NavBar />
+      <Component {...pageProps} />
+    </ChatAppProvider>
+  </div>
 }
 
 export default MyApp
